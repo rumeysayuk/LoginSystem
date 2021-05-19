@@ -11,11 +11,11 @@ public class UserValidator {
     List<User> users = new ArrayList<User>();
 
     public void fillUsers() {
-        users.add(new User(1, "emircan", "dalman", "emircan1@gmail.com", "1234567"));
-        users.add(new User(1, "emircan2", "dalman", "emircan2@gmail.com", "1234567"));
-        users.add(new User(1, "emircan3", "dalman", "emircan3@gmail.com", "1234567"));
-        users.add(new User(1, "emircan4", "dalman", "emircan4@gmail.com", "1234567"));
-        users.add(new User(1, "emircan5", "dalman", "emircan5@gmail.com", "1234567"));
+        users.add(new User(1, "rumeysa", "yuk", "rumeysayuk90@gmail.com", "1234567"));
+        users.add(new User(1, "rabia", "asd", "rabia123mailcom", "1234567"));
+        users.add(new User(1, "rumeysa", "drfdrgv", "rumeysa@gmail.com", "1234567"));
+        users.add(new User(1, "rabia", "asd", "rabia123@gmail.com", "1234567"));
+        users.add(new User(1, "asd", "asd", "asd@asd.com", "1234567"));
     }
 
     public boolean isValid(User user) {

@@ -5,8 +5,6 @@ import LoginSystem.business.validationRules.UserValidator;
 import LoginSystem.dataAccess.abstracts.UserDao;
 import LoginSystem.entities.concretes.User;
 
-import java.util.List;
-
 public class UserManager implements UserService {
 private UserDao userDao;
     private UserValidator userValidator;
@@ -14,7 +12,6 @@ private UserDao userDao;
         this.userDao = userDao;
         this.userValidator = userValidator;
     }
-
 
     @Override
     public void login(String email, String password) {
