@@ -23,7 +23,7 @@ public class RumUserDao implements UserDao {
            if (u.getId()==user.getId()){
                u.setFirstName(user.getFirstName());
                u.setLastName(user.getLastName());
-               u.seteMail(user.geteMail());
+               u.setEmail(user.getEmail());
                u.setPassword(user.getPassword());
            }
        }

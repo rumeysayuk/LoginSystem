@@ -22,7 +22,7 @@ public class GoogleManager implements GoogleService {
     }
     public void accountVerification(User user){
         if(userValidator.isValid(user)){
-            System.out.println(user.geteMail()+ "adresine doğrulama kodu gönderildi.");
+            System.out.println(user.getEmail()+ "adresine doğrulama kodu gönderildi.");
         }
     }
 }
