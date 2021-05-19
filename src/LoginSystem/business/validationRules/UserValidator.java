@@ -11,34 +11,27 @@ public class UserValidator {
 
     public boolean isValid(User user) {
         if (user.getFirstName().length() > 2 && user.getLastName().length() > 2 && user.getPassword().length() >= 6
-                && !user.geteMail().isEmpty()) {
-
+                && !user.getEmail().isEmpty()) {
             return true;
         }
         return false;
     }
 
     public boolean emailExist(String email) {
+        boolean alreadyExists = true;
+
         for (User user : users) {
-            if (user.geteMail() == email) {
-                return true;
+            if (user.getEmail() == email) {
+                alreadyExists = false;
+                break;
             }
         }
-        return false;
+        return alreadyExists;
     }
 
     public boolean isValidEmail(String email){
-
-        String regex = "^(.+)@(.+)$";
-
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         Pattern pattern = Pattern.compile(regex);
-
-        String[] emails = new String[0];
-        for(String email1 : emails) {
-            Matcher matcher = pattern.matcher(email1);
-            System.out.println(email1 + " : " + matcher.matches());
-        }
-        return false;
+        return pattern.matcher(email);
     }
-
 }

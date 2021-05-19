@@ -28,14 +28,17 @@ private UserDao userDao;
 
     @Override
     public void register(User user) {
-        if (userValidator.isValid(user) && !userValidator.emailExist(user.geteMail())){
+        if (userValidator.isValid(user) && userValidator.emailExist(user.getEmail())){
             System.out.println(user.getFirstName() +" "+ user.getLastName()+ " kullanici kaydı başarılı ");
         }
-        else if(userValidator.emailExist(user.geteMail())){
+        else if(userValidator.emailExist(user.getEmail())){
             System.out.println(" Bu mail adresi kullanılıyor!!");
         }
-        else {
+        else if (userValidator.isValid(user)){
             System.out.println(" Eksik karakter girdiniz kayıt yapılamadı!!");
+        }
+        else{
+            System.out.println("Şuanda Bir hata oluştu. lütfen daha sonra tekrar deneyiniz..");
         }
     }
 
@@ -48,6 +51,4 @@ private UserDao userDao;
                System.out.println(email+ " google kaydı başarısız");
            }
     }
-
-
 }
