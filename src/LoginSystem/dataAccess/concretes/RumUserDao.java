@@ -8,9 +8,6 @@ import java.util.List;
 
 public class RumUserDao implements UserDao {
     List<User> users;
-    public RumUserDao() {
-        users= new ArrayList<User>();
-    }
 
     @Override
     public void add(User user) {
