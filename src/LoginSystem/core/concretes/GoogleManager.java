@@ -13,16 +13,16 @@ public class GoogleManager implements GoogleService {
 
     @Override
     public void verifyAccount(User user) {
-        if(userValidator.isValid(user)){
-            System.out.println("Sayın "+user.getFirstName()+" "+user.getLastName() +"Google hesabınız doğrulandı.");
-        }
-        else{
+        if (userValidator.isValid(user)) {
+            System.out.println("Sayın " + user.getFirstName() + " " + user.getLastName() + "Google hesabınız doğrulandı.");
+        } else {
             System.out.println("google doğrulaması başarısız");
         }
     }
-    public void accountVerification(User user){
-        if(userValidator.isValid(user)){
-            System.out.println(user.getEmail()+ "adresine doğrulama kodu gönderildi.");
+
+    public void accountVerification(User user) {
+        if (userValidator.isValid(user)) {
+            System.out.println(user.getEmail() + "adresine doğrulama kodu gönderildi.");
         }
     }
 }
