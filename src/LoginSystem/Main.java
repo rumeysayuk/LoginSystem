@@ -32,7 +32,7 @@ public class Main {
 //        userManager.login("rumeysayuk90@gmail.com", "12365456");
 //        userManager.login("rabia123mailcom", "67890967");
 //        userManager.update(user1);
-//        userManager.delete(user1);
+       userManager.delete(user1);
         userManager.add(user1);
         System.out.println(userManager.getAll());
     }
