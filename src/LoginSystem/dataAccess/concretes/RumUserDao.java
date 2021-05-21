@@ -22,6 +22,7 @@ public class RumUserDao implements UserDao {
                u.setLastName(user.getLastName());
                u.setEmail(user.getEmail());
                u.setPassword(user.getPassword());
+               
            }
        }
     }
