@@ -1,21 +1,19 @@
 package LoginSystem.business.validationRules;
 
+import LoginSystem.dataAccess.abstracts.UserDao;
 import LoginSystem.entities.concretes.User;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserValidator {
-    List<User> users = new ArrayList<User>();
+    private UserDao userDao;
+    ArrayList<User> users;
 
-    public void fillUsers() {
-        users.add(new User(1, "rumeysa", "yuk", "rumeysayuk90@gmail.com", "1234567"));
-        users.add(new User(1, "rabia", "asd", "rabia123mailcom", "1234567"));
-        users.add(new User(1, "rumeysa", "drfdrgv", "rumeysa@gmail.com", "1234567"));
-        users.add(new User(1, "rabia", "asd", "rabia123@gmail.com", "1234567"));
-        users.add(new User(1, "asd", "asd", "asd@asd.com", "1234567"));
+    public UserValidator(UserDao userDao) {
+        this.userDao = userDao;
+        users = this.userDao.getAll();
     }
 
     public boolean isValid(User user) {
@@ -28,7 +26,6 @@ public class UserValidator {
     }
 
     public boolean emailExist(String email) {
-        fillUsers();
         boolean alreadyExists = false;
         for (User user : users) {
             if (user.getEmail().equals(email)) {
